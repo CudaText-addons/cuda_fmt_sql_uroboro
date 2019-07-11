@@ -1,0 +1,12 @@
+[info]
+title=Formatter for SQL, using uroboroSQL
+desc=Formats SQL code, using uroboroSQL library
+type=cudatext-plugin
+subdir=cuda_fmt_sql_uroboro
+homepage=https://github.com/CudaText-addons/cuda_fmt_sql_uroboro
+
+[fmt1]
+caption=SQL Uroboro Format
+method=do_format
+lexers=regex:SQL.*
+config=cuda_fmt_sql_uroboro.json
