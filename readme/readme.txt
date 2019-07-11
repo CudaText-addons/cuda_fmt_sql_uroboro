@@ -34,16 +34,18 @@ WHERE
 AND MI.ARRIVAL_DATE =   '2016-12-01'    -- 入荷日
 
 
-Options in json file:
+Options in config file, which is opened by CudaFormatter commands:
+
 - uf_tab_size
   Tab-char size of indents after formatting. Recommended 4.
 - uf_translate_tabs_to_spaces
   Replace tab-chars to spaces.
-- uf_uppercase
-  Convert reserved words and identifiers to upper case.
+- uf_case
+  Casing of identifiers: "upper" or "lower" or "capitalize" or "nochange".
+- uf_reserved_case
+  Casing of reserved words: "upper" or "lower" or "capitalize" or "nochange".
 - uf_comment_syntax
-  Comments syntax format.
-  You can specify the "uroboroSQL" or "doma2". In the case of normal SQL, can be any.
+  Comments syntax format. Can be "uroboroSQL" or "doma2". In the case of normal SQL, can be any.
 - uf_escapesequence_u005c
   If used escape sequences with a backslash in the SQL, set to true.
 
