@@ -1,13 +1,13 @@
 # Copyright (C) 2008 Andi Albrecht, albrecht.andi@gmail.com
 #
-# This module is part of python-sqlparse and is released under
+# This module is part of python-sqlparse1 and is released under
 # the BSD License: http://www.opensource.org/licenses/bsd-license.php.
 
 """filter"""
 
-from sqlparse import lexer
-from sqlparse.engine import grouping
-from sqlparse.engine.filter import StatementFilter
+from sqlparse1 import lexer
+from sqlparse1.engine import grouping
+from sqlparse1.engine.filter import StatementFilter
 
 # XXX remove this when cleanup is complete
 Filter = object

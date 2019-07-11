@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from sqlparse.sql import Statement, Token
-from sqlparse import tokens as T
+from sqlparse1.sql import Statement, Token
+from sqlparse1 import tokens as T
 
 
 class StatementFilter:

@@ -2,8 +2,8 @@
 
 import itertools
 
-from sqlparse import sql
-from sqlparse import tokens as T
+from sqlparse1 import sql
+from sqlparse1 import tokens as T
 import sys
 
 try:

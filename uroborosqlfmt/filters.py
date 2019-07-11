@@ -5,8 +5,8 @@
 import math
 import re
 import sys
-from sqlparse import sql, tokens as T, utils
-from sqlparse.filters import StripWhitespaceFilter, ReindentFilter
+from sqlparse1 import sql, tokens as T, utils
+from sqlparse1.filters import StripWhitespaceFilter, ReindentFilter
 from uroborosqlfmt import tokenutils as tu, grouping
 from uroborosqlfmt.exceptions import SqlFormatterException
 from uroborosqlfmt.sql import Phrase

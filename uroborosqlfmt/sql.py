@@ -2,7 +2,7 @@
 '''
 @author: ota
 '''
-from sqlparse import sql, tokens as T
+from sqlparse1 import sql, tokens as T
 from uroborosqlfmt import tokenutils as tu
 
 class Having(sql.TokenList):

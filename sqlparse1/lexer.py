@@ -2,7 +2,7 @@
 
 # Copyright (C) 2008 Andi Albrecht, albrecht.andi@gmail.com
 #
-# This module is part of python-sqlparse and is released under
+# This module is part of python-sqlparse1 and is released under
 # the BSD License: http://www.opensource.org/licenses/bsd-license.php.
 
 """SQL Lexer"""
@@ -15,8 +15,8 @@
 import re
 import sys
 
-from sqlparse import tokens
-from sqlparse.keywords import KEYWORDS, KEYWORDS_COMMON
+from sqlparse1 import tokens
+from sqlparse1.keywords import KEYWORDS, KEYWORDS_COMMON
 import collections
 
 
@@ -183,7 +183,7 @@ class Lexer(LexerMetaHasVersion):
             (r'%s', tokens.Name.Placeholder),
             (r'[$:?]\w+', tokens.Name.Placeholder),
             # FIXME(andi): VALUES shouldn't be listed here
-            # see https://github.com/andialbrecht/sqlparse/pull/64
+            # see https://github.com/andialbrecht/sqlparse1/pull/64
             (r'VALUES', tokens.Keyword),
             (r'(@|##|#)[^\W\d_]\w+', tokens.Name),
             # IN is special, it may be followed by a parenthesis, but
@@ -223,7 +223,7 @@ class Lexer(LexerMetaHasVersion):
         self.filters = []
 
     def add_filter(self, filter_, **options):
-        from sqlparse.filters import Filter
+        from sqlparse1.filters import Filter
         if not isinstance(filter_, Filter):
             filter_ = filter_(**options)
         self.filters.append(filter_)

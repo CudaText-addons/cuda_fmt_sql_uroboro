@@ -5,7 +5,7 @@
 import re
 import sys
 
-from sqlparse import tokens as T
+from sqlparse1 import tokens as T
 
 
 class Token(object):
@@ -539,7 +539,7 @@ class Identifier(TokenList):
 
 
 class IdentifierList(TokenList):
-    """A list of :class:`~sqlparse.sql.Identifier`\'s."""
+    """A list of :class:`~sqlparse1.sql.Identifier`\'s."""
 
     __slots__ = ('value', 'ttype', 'tokens')
 

@@ -1,4 +1,4 @@
-from sqlparse import tokens
+from sqlparse1 import tokens
 
 KEYWORDS = {
     'ABORT': tokens.Keyword,

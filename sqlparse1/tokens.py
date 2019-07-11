@@ -1,6 +1,6 @@
 # Copyright (C) 2008 Andi Albrecht, albrecht.andi@gmail.com
 #
-# This module is part of python-sqlparse and is released under
+# This module is part of python-sqlparse1 and is released under
 # the BSD License: http://www.opensource.org/licenses/bsd-license.php.
 
 # The Token implementation is based on pygment's token system written

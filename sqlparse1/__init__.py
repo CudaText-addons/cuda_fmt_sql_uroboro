@@ -1,6 +1,6 @@
 # Copyright (C) 2008 Andi Albrecht, albrecht.andi@gmail.com
 #
-# This module is part of python-sqlparse and is released under
+# This module is part of python-sqlparse1 and is released under
 # the BSD License: http://www.opensource.org/licenses/bsd-license.php.
 
 """Parse SQL statements."""
@@ -10,12 +10,12 @@ __version__ = '0.1.19'
 
 
 # Setup namespace
-from sqlparse import engine
-from sqlparse import filters
-from sqlparse import formatter
+from sqlparse1 import engine
+from sqlparse1 import filters
+from sqlparse1 import formatter
 
 # Deprecated in 0.1.5. Will be removed in 0.2.0
-from sqlparse.exceptions import SQLParseError
+from sqlparse1.exceptions import SQLParseError
 
 
 def parse(sql, encoding=None):
@@ -23,7 +23,7 @@ def parse(sql, encoding=None):
 
     :param sql: A string containting one or more SQL statements.
     :param encoding: The encoding of the statement (optional).
-    :returns: A tuple of :class:`~sqlparse.sql.Statement` instances.
+    :returns: A tuple of :class:`~sqlparse1.sql.Statement` instances.
     """
     return tuple(parsestream(sql, encoding))
 
@@ -33,7 +33,7 @@ def parsestream(stream, encoding=None):
 
     :param stream: A file-like object.
     :param encoding: The encoding of the stream contents (optional).
-    :returns: A generator of :class:`~sqlparse.sql.Statement` instances.
+    :returns: A generator of :class:`~sqlparse1.sql.Statement` instances.
     """
     stack = engine.FilterStack()
     stack.full_analyze()
@@ -70,7 +70,7 @@ def split(sql, encoding=None):
     return [str(stmt).strip() for stmt in stack.run(sql, encoding)]
 
 
-from sqlparse.engine.filter import StatementFilter
+from sqlparse1.engine.filter import StatementFilter
 
 
 def split2(stream):

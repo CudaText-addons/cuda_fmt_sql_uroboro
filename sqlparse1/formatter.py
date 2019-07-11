@@ -1,12 +1,12 @@
 # Copyright (C) 2008 Andi Albrecht, albrecht.andi@gmail.com
 #
-# This module is part of python-sqlparse and is released under
+# This module is part of python-sqlparse1 and is released under
 # the BSD License: http://www.opensource.org/licenses/bsd-license.php.
 
 """SQL formatter"""
 
-from sqlparse import filters
-from sqlparse.exceptions import SQLParseError
+from sqlparse1 import filters
+from sqlparse1.exceptions import SQLParseError
 
 
 def validate_options(options):
@@ -85,7 +85,7 @@ def build_filter_stack(stack, options):
     """Setup and return a filter stack.
 
     Args:
-      stack: :class:`~sqlparse.filters.FilterStack` instance
+      stack: :class:`~sqlparse1.filters.FilterStack` instance
       options: Dictionary with options validated by validate_options.
     """
     # Token filter

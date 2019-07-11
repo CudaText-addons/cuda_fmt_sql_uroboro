@@ -4,14 +4,14 @@ import re
 
 from os.path import abspath, join
 
-from sqlparse import sql, tokens as T
-from sqlparse.engine import FilterStack
-from sqlparse.lexer import tokenize
-from sqlparse.pipeline import Pipeline
-from sqlparse.tokens import (Comment, Comparison, Keyword, Name, Punctuation,
+from sqlparse1 import sql, tokens as T
+from sqlparse1.engine import FilterStack
+from sqlparse1.lexer import tokenize
+from sqlparse1.pipeline import Pipeline
+from sqlparse1.tokens import (Comment, Comparison, Keyword, Name, Punctuation,
                              String, Whitespace)
-from sqlparse.utils import memoize_generator
-from sqlparse.utils import split_unquoted_newlines
+from sqlparse1.utils import memoize_generator
+from sqlparse1.utils import split_unquoted_newlines
 
 
 # --------------------------
@@ -572,7 +572,7 @@ class ColumnsSelect:
 
             # We are processing an AS keyword
             elif mode == 2:
-                # We check also for Keywords because a bug in SQLParse
+                # We check also for Keywords because a bug in sqlparse1
                 if token_type == Name or token_type == Keyword:
                     yield value
                     mode = 1

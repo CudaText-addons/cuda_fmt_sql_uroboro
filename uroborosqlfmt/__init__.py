@@ -10,9 +10,9 @@ __version__ = '0.0.1'
 import sys
 import re
 from threading import Thread, Lock
-import sqlparse
-from sqlparse.lexer import Lexer
-from sqlparse import tokens as T, utils
+import sqlparse1
+from sqlparse1.lexer import Lexer
+from sqlparse1 import tokens as T, utils
 from uroborosqlfmt import filters, config
 
 LOCK = Lock()
@@ -74,12 +74,12 @@ def format_sql(sql, local_config = config.LocalConfig()):
     finally:
         LOCK.release()
 
-    stack = sqlparse.engine.FilterStack()
+    stack = sqlparse1.engine.FilterStack()
     stack.enable_grouping()
 
     if local_config.case != None:
-        stack.preprocess.append(sqlparse.filters.KeywordCaseFilter(local_config.case))
-        stack.preprocess.append(sqlparse.filters.IdentifierCaseFilter(local_config.case))
+        stack.preprocess.append(sqlparse1.filters.KeywordCaseFilter(local_config.case))
+        stack.preprocess.append(sqlparse1.filters.IdentifierCaseFilter(local_config.case))
 
     if local_config.reserved_case != None:
         stack.preprocess.append(filters.ReservedWordCaseFilter(local_config))
@@ -93,7 +93,7 @@ def format_sql(sql, local_config = config.LocalConfig()):
     stack.stmtprocess.append(filters.OperatorFilter())
 
     stack.stmtprocess.append(filters.CustomReindentFilter(local_config))
-    stack.postprocess.append(sqlparse.filters.SerializerUnicode())
+    stack.postprocess.append(sqlparse1.filters.SerializerUnicode())
 
     if sys.version_info[0] < 3 and isinstance(sql, unicode):
         sql = sql.encode("utf-8")

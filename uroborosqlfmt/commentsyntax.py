@@ -3,7 +3,7 @@
 @author: ota
 '''
 import re
-from sqlparse import tokens as T
+from sqlparse1 import tokens as T
 from uroborosqlfmt.tokenutils import EngineComment
 from uroborosqlfmt import tokenutils as tu
 

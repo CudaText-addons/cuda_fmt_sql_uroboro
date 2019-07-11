@@ -3,7 +3,7 @@
 @author: ota
 '''
 import collections
-from sqlparse import sql, tokens as T
+from sqlparse1 import sql, tokens as T
 from uroborosqlfmt import tokenutils as tu
 from uroborosqlfmt.sql import WithinGroupFunctions, Phrase, AscDesc, OffsetFetch, Having, _BaseWords, OverFunctions, \
     When, KeepFunctions, ForUpdate, WaitOrNowait, Union, Join, On, MergeWhen, MergeUpdateInsertClause, ConnectBy, \
